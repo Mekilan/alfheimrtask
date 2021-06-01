@@ -2,3 +2,20 @@
   font-family: sans-serif;
   text-align: center;
 }
+.cp-logo {
+  width: 10%;
+}
+.img-bg {
+  width: 100%;
+  margin-top: 80px;
+}
+.shrt-p {
+  margin-top: 25px;
+}
+.card-list {
+  margin-top: 25px;
+}
+.card-l-img {
+  width: 70%;
+  margin-left: 45px;
+}
