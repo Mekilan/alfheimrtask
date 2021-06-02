@@ -11,7 +11,7 @@ class LeftFilterPage extends React.Component {
       setsubsh: "show"
     };
   }
-  componentDidMount(props) {}
+  componentDidMount(props) { }
 
   hTL = (evt) => {
     debugger;
@@ -40,12 +40,12 @@ class LeftFilterPage extends React.Component {
   render() {
     return (
       <div className="shrt-p">
-        <Accordion>
+        <Accordion variant="dark">
           <Card>
             <Card.Header onClick={this.expandCollapse}>
               SORT BY PRICE
             </Card.Header>
-            <Accordion.Collapse eventKey="0" className={this.state.setsh}>
+            <Accordion.Collapse eventKey="0" variant="link" className={this.state.setsh}>
               <React.Fragment>
                 <Card.Body>
                   <input type="checkbox" onChange={this.hTL} id="htl" /> Highest
