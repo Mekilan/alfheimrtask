@@ -1,0 +1,35 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background: black;
+}
+.cp-logo {
+  width: 10%;
+}
+.img-bg {
+  width: 100%;
+  margin-top: 80px;
+}
+.shrt-p {
+  margin-top: 25px;
+}
+.card-list {
+  margin-top: 25px;
+}
+.card-l-img {
+  width: 54%;
+  margin-left: 50px;
+}
+.txt-ovflw {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+.card-lst {
+  width: 100%;
+}
+.txt-algn-nd {
+  text-align: center;
+  margin-top: 25%;
+}
