@@ -1,10 +1,10 @@
 import React from "react";
 import LeftFilterPage from "./LeftFilterPage";
 import RightSideProductList from "./rightSideProductList";
+//import Paginator from "./paginator";
 
 const ContentPage = (props) => {
   debugger;
-  const { products, totalPages } = props.listdata;
   const callBackFun = (data) => {};
   return (
     <div className="container">
@@ -20,14 +20,24 @@ const ContentPage = (props) => {
           </div>
           <div className="col-lg-9">
             <div className="row">
-              <RightSideProductList
-                productlist={products}
-                totalpages={totalPages}
-                callback={callBackFun}
-              />
+              {props.listdata !== undefined ? (
+                props.listdata.length !== 0 ? (
+                  <RightSideProductList
+                    productlist={props.listdata}
+                    callback={callBackFun}
+                  />
+                ) : (
+                  <div className="txt-algn-nd">No Data Found...</div>
+                )
+              ) : null}
             </div>
           </div>
         </div>
+        {/*<div className="row">
+          <div className="col">
+            <Paginator totalpages={totalPages} />
+          </div>
+                </div>*/}
       </div>
     </div>
   );

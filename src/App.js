@@ -1,40 +1,37 @@
 import React from "react";
 import "./styles.css";
+import { Router, Route } from "react-router-dom";
 import HeaderNav from "./component/headerNav";
-import ContentPage from "./component/ContentPage/contentPage";
-import { connect } from "react-redux";
-import { getProductList } from "./actions";
+import ContentPageCommon from "./component/ContentPage/contentPageCommon";
 import "bootstrap/dist/css/bootstrap.min.css";
+import history from "./History";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    window.testdata = this;
     this.state = {
-      catdata: "laptop",
-      getdatalist: []
+      getjson: []
     };
   }
-  async componentDidMount() {
-    let querystring = "?limit=10&page=2&category=laptop";
-    await this.props.getProductList(querystring);
-    this.setState({}, () => {
-      this.setState({ getdatalist: this.props.productlist.productlist.state });
-    });
-  }
+
   render() {
-    const callBackFunc = (data) => {};
     return (
-      <div className="App">
-        <HeaderNav callback={callBackFunc} />
-        <ContentPage listdata={this.state.getdatalist} />
-      </div>
+      <Router history={history}>
+        <div className="App">
+          <Route
+            path="/:monitor?/:laptop?/:hdd?/:processor?/:ram?"
+            exact
+            component={HeaderNav}
+          />
+          <Route
+            path="/:monitor?/:laptop?/:hdd?/:processor?/:ram?"
+            exact
+            component={ContentPageCommon}
+          ></Route>
+        </div>
+      </Router>
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    productlist: state
-  };
-};
-export default connect(mapStateToProps, { getProductList })(App);
+
+export default App;
